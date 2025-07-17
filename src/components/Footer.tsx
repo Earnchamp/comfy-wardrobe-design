@@ -38,11 +38,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto container-padding">
         {/* Newsletter Section */}
-        <div className="border-b border-primary-foreground/20 py-12">
-          <div className="max-w-2xl mx-auto text-center">
-            <h3 className="text-2xl font-semibold mb-4">Stay in Style</h3>
+        <div className="border-b border-primary-foreground/20 section-padding">
+          <div className="max-w-2xl mx-auto text-center opacity-0 animate-fadeInUp">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4">Stay in Style</h3>
             <p className="text-primary-foreground/80 mb-6">
               Subscribe to our newsletter for exclusive offers and the latest fashion trends.
             </p>
@@ -52,7 +52,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="flex-1 bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
               />
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 transition-smooth">
+              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 transition-smooth hover-lift shimmer-effect">
                 <Mail className="h-4 w-4 mr-2" />
                 Subscribe
               </Button>
@@ -61,11 +61,11 @@ const Footer = () => {
         </div>
 
         {/* Main Footer Content */}
-        <div className="py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="section-padding">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
-            <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold mb-4">
+            <div className="lg:col-span-1 opacity-0 animate-fadeInUp">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4">
                 <span className="text-primary-foreground">LUXE</span>
                 <span className="text-accent">FASHION</span>
               </h2>
@@ -73,31 +73,31 @@ const Footer = () => {
                 Premium fashion for the modern individual. Discover luxury pieces that define your personal style.
               </p>
               <div className="flex space-x-4">
-                <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10">
+                <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10 hover-lift">
                   <Facebook className="h-5 w-5" />
                 </Button>
-                <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10">
+                <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10 hover-lift">
                   <Instagram className="h-5 w-5" />
                 </Button>
-                <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10">
+                <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10 hover-lift">
                   <Twitter className="h-5 w-5" />
                 </Button>
-                <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10">
+                <Button variant="ghost" size="sm" className="text-primary-foreground hover:text-accent hover:bg-primary-foreground/10 hover-lift">
                   <Youtube className="h-5 w-5" />
                 </Button>
               </div>
             </div>
 
             {/* Footer Links */}
-            {footerSections.map((section) => (
-              <div key={section.title}>
+            {footerSections.map((section, index) => (
+              <div key={section.title} className={`opacity-0 animate-fadeInUp animate-delay-${(index + 1) * 200}`}>
                 <h4 className="font-semibold mb-4">{section.title}</h4>
                 <ul className="space-y-2">
                   {section.links.map((link) => (
                     <li key={link.name}>
                       <a
                         href={link.href}
-                        className="text-primary-foreground/80 hover:text-accent transition-smooth text-sm"
+                        className="text-primary-foreground/80 hover:text-accent transition-smooth text-sm hover-lift"
                       >
                         {link.name}
                       </a>

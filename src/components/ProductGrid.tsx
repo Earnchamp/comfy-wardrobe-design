@@ -87,30 +87,35 @@ const ProductGrid = () => {
     }
   };
 
+  const getAnimationDelay = (index: number) => {
+    const delays = ['200', '400', '600', '800'];
+    return delays[index % 4];
+  };
+
   return (
-    <section className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-section mb-4">Featured Products</h2>
+    <section className="section-padding bg-gradient-subtle">
+      <div className="container mx-auto container-padding">
+        <div className="text-center mb-16 opacity-0 animate-fadeInUp">
+          <h2 className="text-section mb-6">Featured Products</h2>
           <p className="text-elegant max-w-2xl mx-auto">
             Discover our handpicked selection of premium fashion pieces that define contemporary elegance and timeless style.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <Card key={product.id} className="group product-card border-0 shadow-elegant">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+          {products.map((product, index) => (
+            <Card key={product.id} className={`group product-card border-0 shadow-elegant opacity-0 animate-fadeInUp animate-delay-${getAnimationDelay(index)}`}>
               <CardContent className="p-0">
                 <div className="relative overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-80 object-cover transition-smooth group-hover:scale-105"
+                    className="w-full h-64 sm:h-72 md:h-80 object-cover transition-smooth group-hover:scale-105"
                   />
                   
                   {/* Badge */}
                   {product.badge && (
-                    <Badge className={`absolute top-3 left-3 ${getBadgeVariant(product.badge)}`}>
+                    <Badge className={`absolute top-3 left-3 ${getBadgeVariant(product.badge)} animate-slideInDown`}>
                       {product.badge}
                     </Badge>
                   )}
@@ -127,7 +132,7 @@ const ProductGrid = () => {
                   
                   {/* Add to Cart Overlay */}
                   <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-smooth">
-                    <Button className="w-full bg-white text-black hover:bg-gray-100 transition-smooth">
+                    <Button className="w-full bg-white text-black hover:bg-gray-100 transition-smooth shimmer-effect">
                       <ShoppingCart className="h-4 w-4 mr-2" />
                       Add to Cart
                     </Button>
@@ -151,8 +156,8 @@ const ProductGrid = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="px-8 py-3 text-lg font-semibold hover-lift">
+        <div className="text-center mt-16 opacity-0 animate-fadeInUp animate-delay-800">
+          <Button size="lg" variant="outline" className="px-8 py-3 text-lg font-semibold hover-lift shimmer-effect">
             View All Products
           </Button>
         </div>

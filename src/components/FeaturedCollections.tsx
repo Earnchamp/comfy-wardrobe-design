@@ -33,26 +33,31 @@ const FeaturedCollections = () => {
     }
   ];
 
+  const getAnimationDelay = (index: number) => {
+    const delays = ['200', '400', '600'];
+    return delays[index];
+  };
+
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-section mb-4">Curated Collections</h2>
+    <section className="section-padding bg-background">
+      <div className="container mx-auto container-padding">
+        <div className="text-center mb-16 opacity-0 animate-fadeInUp">
+          <h2 className="text-section mb-6">Curated Collections</h2>
           <p className="text-elegant max-w-2xl mx-auto">
             Explore our carefully curated collections designed for every occasion and lifestyle.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {collections.map((collection) => (
-            <Card key={collection.id} className="group product-card border-0 shadow-elegant overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {collections.map((collection, index) => (
+            <Card key={collection.id} className={`group product-card border-0 shadow-elegant overflow-hidden opacity-0 animate-fadeInUp animate-delay-${getAnimationDelay(index)}`}>
               <CardContent className="p-0">
                 <div className="relative">
                   <div className={`absolute inset-0 bg-gradient-to-br ${collection.color} opacity-10`}></div>
                   <img
                     src={collection.image}
                     alt={collection.title}
-                    className="w-full h-64 object-cover transition-smooth group-hover:scale-105"
+                    className="w-full h-48 sm:h-56 md:h-64 object-cover transition-smooth group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-smooth"></div>
                 </div>
@@ -65,7 +70,7 @@ const FeaturedCollections = () => {
                     <span className="text-sm text-muted-foreground">
                       {collection.itemCount} items
                     </span>
-                    <Button variant="ghost" size="sm" className="group-hover:text-accent transition-smooth">
+                    <Button variant="ghost" size="sm" className="group-hover:text-accent transition-smooth hover-lift">
                       Shop Now
                       <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-smooth" />
                     </Button>

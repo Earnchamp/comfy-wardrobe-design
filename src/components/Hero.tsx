@@ -10,29 +10,29 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Elegant fashion photography"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover animate-scaleIn"
         />
         <div className="absolute inset-0 bg-black/40"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 text-center text-white container-padding">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-hero mb-6 animate-fade-in">
+          <h1 className="text-hero mb-8 opacity-0 animate-fadeInUp">
             Elevate Your
-            <span className="block bg-gradient-luxury bg-clip-text text-transparent">
+            <span className="block hero-text-animated bg-gradient-luxury bg-clip-text text-transparent">
               Style
             </span>
           </h1>
           
-          <p className="text-elegant mb-8 max-w-2xl mx-auto text-gray-200">
+          <p className="text-elegant mb-12 max-w-2xl mx-auto text-gray-200 opacity-0 animate-fadeInUp animate-delay-400">
             Discover our curated collection of luxury fashion pieces designed to make you feel confident and sophisticated. From timeless classics to modern statements.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fadeInUp animate-delay-600">
             <Button 
               size="lg" 
-              className="bg-white text-black hover:bg-gray-100 transition-smooth px-8 py-3 text-lg font-semibold"
+              className="bg-white text-black hover:bg-gray-100 transition-smooth px-8 py-3 text-lg font-semibold hover-lift shimmer-effect"
             >
               Shop Collection
               <ArrowRight className="ml-2 h-5 w-5" />
@@ -41,7 +41,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-black transition-smooth px-8 py-3 text-lg font-semibold"
+              className="border-white text-white hover:bg-white hover:text-black transition-smooth px-8 py-3 text-lg font-semibold hover-lift"
             >
               Explore New Arrivals
             </Button>
@@ -49,9 +49,12 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-1 h-8 bg-white rounded-full opacity-60"></div>
+      {/* Animated Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 animate-fadeInUp animate-delay-800">
+        <div className="flex flex-col items-center space-y-2">
+          <span className="text-white/60 text-sm hidden sm:block">Scroll to explore</span>
+          <div className="w-1 h-8 bg-white/60 rounded-full animate-bounce-custom"></div>
+        </div>
       </div>
     </section>
   );
