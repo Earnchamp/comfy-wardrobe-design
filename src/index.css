@@ -2,41 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Fashion Website Design System - Sophisticated and Modern */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 0 0% 9%;
+    
+    /* Sophisticated Neutrals */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 0 0% 9%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --popover-foreground: 0 0% 9%;
+    
+    /* Deep Charcoal Primary */
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    
+    /* Warm Cream Secondary */
+    --secondary: 35 20% 96%;
+    --secondary-foreground: 0 0% 9%;
+    
+    /* Elegant Muted Tones */
+    --muted: 35 10% 95%;
+    --muted-foreground: 0 0% 45%;
+    
+    /* Emerald Accent */
+    --accent: 152 60% 20%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Luxury Gold Highlight */
+    --luxury: 45 100% 50%;
+    --luxury-foreground: 0 0% 9%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Subtle Borders */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 152 60% 20%;
+    
+    /* Design System Tokens */
     --radius: 0.5rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 9%) 0%, hsl(0 0% 20%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(152 60% 20%) 0%, hsl(152 60% 30%) 100%);
+    --gradient-luxury: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(45 100% 60%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(35 20% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 4px 20px -2px hsl(0 0% 0% / 0.1);
+    --shadow-hover: 0 8px 30px -4px hsl(0 0% 0% / 0.15);
+    --shadow-accent: 0 4px 20px -2px hsl(152 60% 20% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +126,73 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  /* Background Gradients */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .bg-gradient-luxury {
+    background: var(--gradient-luxury);
+  }
+  
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  /* Elegant Shadows */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+  
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Interactive Elements */
+  .fashion-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .hover-lift {
+    @apply transition-smooth hover:scale-105 hover:shadow-hover;
+  }
+  
+  .product-card {
+    @apply transition-smooth hover:scale-[1.02] hover:shadow-elegant;
+  }
+  
+  /* Typography */
+  .text-hero {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+  }
+  
+  .text-section {
+    @apply text-3xl md:text-4xl font-semibold;
+  }
+  
+  .text-elegant {
+    @apply text-lg leading-relaxed text-muted-foreground;
   }
 }
