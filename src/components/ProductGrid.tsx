@@ -12,8 +12,8 @@ const ProductGrid = () => {
     {
       id: 1,
       name: "Luxury Leather Handbag",
-      price: 299,
-      originalPrice: 399,
+      price: 24999,
+      originalPrice: 33299,
       image: product1,
       badge: "Sale",
       category: "Accessories"
@@ -21,7 +21,7 @@ const ProductGrid = () => {
     {
       id: 2,
       name: "Silk Blouse",
-      price: 189,
+      price: 15749,
       image: product2,
       badge: "New",
       category: "Women"
@@ -29,14 +29,14 @@ const ProductGrid = () => {
     {
       id: 3,
       name: "Charcoal Suit Jacket",
-      price: 449,
+      price: 37499,
       image: product3,
       category: "Men"
     },
     {
       id: 4,
       name: "Emerald Evening Dress",
-      price: 329,
+      price: 27499,
       image: product4,
       badge: "Featured",
       category: "Women"
@@ -44,15 +44,15 @@ const ProductGrid = () => {
     {
       id: 5,
       name: "Classic Trench Coat",
-      price: 599,
+      price: 49999,
       image: product1,
       category: "Outerwear"
     },
     {
       id: 6,
       name: "Designer Sunglasses",
-      price: 199,
-      originalPrice: 259,
+      price: 16599,
+      originalPrice: 21599,
       image: product2,
       badge: "Sale",
       category: "Accessories"
@@ -60,14 +60,14 @@ const ProductGrid = () => {
     {
       id: 7,
       name: "Cashmere Sweater",
-      price: 249,
+      price: 20799,
       image: product3,
       category: "Men"
     },
     {
       id: 8,
       name: "Midi Skirt",
-      price: 149,
+      price: 12449,
       image: product4,
       badge: "New",
       category: "Women"
@@ -138,10 +138,10 @@ const ProductGrid = () => {
                   <p className="text-sm text-muted-foreground mb-1">{product.category}</p>
                   <h3 className="font-semibold text-foreground mb-2 line-clamp-1">{product.name}</h3>
                   <div className="flex items-center space-x-2">
-                    <span className="text-lg font-bold text-primary">${product.price}</span>
+                    <span className="text-lg font-bold text-primary">₹{product.price.toLocaleString('en-IN')}</span>
                     {product.originalPrice && (
                       <span className="text-sm text-muted-foreground line-through">
-                        ${product.originalPrice}
+                        ₹{product.originalPrice.toLocaleString('en-IN')}
                       </span>
                     )}
                   </div>
