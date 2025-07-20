@@ -20,8 +20,11 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-hero mb-8 opacity-0 animate-fadeInUp">
             Elevate Your
-            <span className="block hero-text-animated bg-gradient-luxury bg-clip-text text-transparent">
+            <span className="block hero-text-animated bg-gradient-luxury bg-clip-text text-transparent relative">
               Style
+              <span className="absolute -bottom-2 left-0 right-0 text-xs font-normal text-white/90 animate-fadeInUp animate-delay-200">
+                Premium Fashion Collection
+              </span>
             </span>
           </h1>
           
