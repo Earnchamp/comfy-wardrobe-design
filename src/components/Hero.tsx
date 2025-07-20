@@ -20,7 +20,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="text-hero mb-8 opacity-0 animate-fadeInUp">
             Elevate Your
-            <span className="block hero-text-animated bg-gradient-luxury bg-clip-text text-transparent relative">
+            <span className="inline-block bg-yellow-400 text-black px-4 py-2 rounded-lg font-bold hero-text-animated">
               Fashion
             </span>
           </h1>
@@ -41,7 +41,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-black transition-smooth px-8 py-3 text-lg font-semibold hover-lift"
+              className="bg-yellow-400 border-yellow-400 text-black hover:bg-yellow-500 hover:border-yellow-500 transition-smooth px-8 py-3 text-lg font-semibold hover-lift"
             >
               Explore New Arrivals
             </Button>
